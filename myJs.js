@@ -1,4 +1,33 @@
-addEventListener('DOMContentLoaded',() =>{
+const bp = document.getElementById('bp')
+const bn = document.getElementById('botonArriba')
+const botonCircular = document.getElementById('botonIos')
+
+
+bp.addEventListener('click', e => {
+    scrollAbajo(e)
+})
+bn.addEventListener('click', e => {
+    scrollArriba(e)
+})
+
+const scrollAbajo = e => {
+    if(e.target.classList.contains('botonCircular')){
+        scrollTo(0,774)
+    }
+}
+const scrollArriba = e => {
+    if(e.target.classList.contains('botonCircularAbajo')){
+        scrollTo(0,0)
+    }
+}
+
+
+
+
+
+
+
+/* addEventListener('DOMContentLoaded',() =>{
     const botonIrAbajo = document.querySelector('#botonIos')
     const botonIrArriba = document.querySelector('#botonArriba')
     const obtenerPixelesInicio = () => document.documentElement.scrollTop || document.body.scrollTop
@@ -36,6 +65,6 @@ addEventListener('DOMContentLoaded',() =>{
     botonIrArriba.addEventListener('click',subir)
     botonIrAbajo.addEventListener('click',irAbajo)
   
-})
+}) */
 
 

@@ -135,48 +135,57 @@ body{
 }
 .bannerNormal{
     background-color: #282828;
-    min-height: 100vh;
+    color: white;
     text-align: center;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "titulo titulo"
+                         "sec1 sec2"; 
+}
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
-}
-.contenedor2{
-    display: block; 
-    text-align: center;
-}
-.tituloPrincipal{
-    font-size: 4rem;
-    padding: 8vh;
-    padding-bottom: 2vh;
-    display: inline-block;
-    color: #b3b3b3;  
-}
-.textoCentrado{
+    align-items: center;
+    grid-area: titulo;
     color: white;
-    display:block;
-    padding-bottom: 7vh;
-  
+    padding:  50px 0 50px 0;
 }
-.seccionDoble{
-    display: inline-block;
-  
-    color: white;
-    height: auto ;
-    width: 30%;
-      
+.titulo{
+    font-size: 50px ;
+    width: 100%;
+}
+
+.seccionDoble1{
+    grid-area: sec1;
+}
+.seccionDoble2{
+    grid-area: sec2;
 }
 .conocimientoBarra{
-    height: 15vh;
-    width: 49vh;
- 
-    display: block;
-    margin-left: 0;
-    margin-right: 0;  
+    padding: 0px 50px 20px 50px ;
 }
-.progress{
-    width: 90%;
-    display: inline-block;
+
+
+@media (max-width: 1000px) {
+    .bannerNormal{
+        grid-template-areas: "titulo titulo"
+                             "sec1 sec1"
+                             "sec2 sec2";
+    }
+}
+@media (max-width:1000px){
+    .bannerNegro{
+        grid-template-areas:"sec1"
+                            "sec2"
+                            "sec3"
+                            "sec4";
+    }
 }
 .logoImagen{
     margin-top: 40px;
